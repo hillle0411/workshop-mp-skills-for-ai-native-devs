@@ -49,6 +49,14 @@ export default function Header() {
               >
                 My Orders
               </NavLink>
+              <NavLink
+                to="/favourites"
+                className={({ isActive }) =>
+                  `text-sm font-medium ${isActive ? 'text-indigo-600' : 'text-slate-600 hover:text-slate-900'}`
+                }
+              >
+                Favourites
+              </NavLink>
               <span className="hidden text-sm text-slate-500 sm:inline">{email}</span>
               <button type="button" onClick={logout} className="btn-secondary">
                 Logout

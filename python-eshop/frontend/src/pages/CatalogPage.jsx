@@ -4,9 +4,11 @@ import { api } from '../api/client';
 import CatalogFilters from '../components/CatalogFilters';
 import Pagination from '../components/Pagination';
 import ProductCard from '../components/ProductCard';
+import { useFavourites } from '../context/FavouritesContext';
 
 export default function CatalogPage() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const { loadError: favouritesError } = useFavourites();
   const [brands, setBrands] = useState([]);
   const [types, setTypes] = useState([]);
   const [catalog, setCatalog] = useState(null);
@@ -74,6 +76,11 @@ export default function CatalogPage() {
       />
 
       {error && <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">{error}</p>}
+      {favouritesError && (
+        <p className="rounded-lg bg-red-50 px-4 py-3 text-sm text-red-700">
+          Could not load your favourites: {favouritesError}
+        </p>
+      )}
 
       {loading ? (
         <p className="text-center text-slate-500">Loading catalog...</p>

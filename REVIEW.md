@@ -2,7 +2,7 @@
 
 What matters when reviewing a change to this repo:
 
-- **Baskets and auth:** a failure is "one shopper can see or change another shopper's basket or orders". Check every new route for who can reach it.
+- **Baskets and auth:** a failure is "one buyer can see or change another buyer's basket or orders". Check every new route for who can reach it.
 - **Checkout:** a failure is "an order and a basket disagree". Order writes and basket changes must stay in one transaction.
 - **Tests:** every behaviour change has a test that would fail without it. No test, no merge.
 - **Frontend:** errors must be shown, never disguised as an empty state.

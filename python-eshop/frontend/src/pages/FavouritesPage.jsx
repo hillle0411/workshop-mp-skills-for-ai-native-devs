@@ -65,7 +65,7 @@ export default function FavouritesPage() {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold text-slate-900">My favourites</h1>
-        <p className="mt-1 text-slate-500">Products you have saved for later.</p>
+        <p className="mt-1 text-slate-500">Products you have marked as Favourites.</p>
       </div>
 
       {loadError && (
